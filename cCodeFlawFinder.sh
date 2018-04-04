@@ -28,6 +28,9 @@ echo "***${proDir[$i]}***" | tee -a "$resDir"allPrograms.txt "$resDir${proDir[$i
 flawfinder $tempDir | tee -a "$resDir"allPrograms.txt "$resDir${proDir[$i]}"_results.txt
 echo | tee -a "$resDir"allPrograms.txt "$resDir${proDir[$i]}"_results.txt
 
+flawfinder --csv $tempDir | tee -a "$resDir"allPrograms.csv "$resDir${proDir[$i]}"_results.csv
+flawfinder --html $tempDir | tee -a "$resDir"allPrograms.html "$resDir${proDir[$i]}"_results.html
+
 #change back to the dir with the programs
 popd > /dev/null
 
